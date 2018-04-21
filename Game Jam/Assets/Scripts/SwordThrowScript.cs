@@ -10,6 +10,8 @@ public class SwordThrowScript : MonoBehaviour {
 	public float maxMagnitude = 0.75f;
 	public GameObject aimReticle;
 	public GameObject aimPointer;
+	public AudioClip shootSFX;
+	public AudioClip chargeSFX;
 
 	Vector3 _orgMousePos;
 	Rigidbody2D _rigidBody;
@@ -23,10 +25,12 @@ public class SwordThrowScript : MonoBehaviour {
 	bool _isMovingOutOfGround = false;
 	Collider2D[] _colliders = new Collider2D[5];
 	Collider2D _groundCollider;
+	AudioSource _audio;
 
 	void Start () {
 		_rigidBody = GetComponent<Rigidbody2D>();
 		_collider = GetComponent<Collider2D>();
+		_audio = GetComponent<AudioSource>();
 		_filter.NoFilter();
 	}
 
@@ -60,6 +64,9 @@ public class SwordThrowScript : MonoBehaviour {
 	}
 
 	void Shoot(){
+		_audio.clip = shootSFX;
+		_audio.Play();
+
 		_canShoot = false;
 	    _isLaunched = true;
 	    _isAiming = false;
@@ -75,6 +82,8 @@ public class SwordThrowScript : MonoBehaviour {
 	}
 
 	void StartAiming(){
+		_audio.clip = chargeSFX;
+		_audio.Play();
 		_orgMousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 		_isAiming = true;
 		aimReticle.transform.rotation = Quaternion.identity;
