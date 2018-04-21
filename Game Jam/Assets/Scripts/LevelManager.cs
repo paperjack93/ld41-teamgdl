@@ -26,6 +26,9 @@ public class LevelManager : MonoBehaviour
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
 
+
+        Screen.SetResolution(1280,768, false);
+
     }
 
 
