@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61751602834924124}
   - component: {fileID: 50790604743125074}
   - component: {fileID: 114549424734130700}
+  - component: {fileID: 114555730774611032}
   m_Layer: 9
   m_Name: enemy0
   m_TagString: Enemy
@@ -101,8 +102,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killFx: {fileID: 1033162433597872, guid: ed2b2d6d4795ce04694fec5acd456605, type: 2}
   faceRight: 0
-  jump: {x: -2, y: 2}
-  jumpTimer: 1.5
+--- !u!114 &114555730774611032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974509520222950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4edbf0b49d4b443ac338b1e8dc394f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: {x: -4, y: 2}
+  jumpTimer: 1
 --- !u!212 &212536028133596464
 SpriteRenderer:
   m_ObjectHideFlags: 1
