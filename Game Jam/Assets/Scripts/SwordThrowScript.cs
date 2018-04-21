@@ -7,12 +7,16 @@ public class SwordThrowScript : MonoBehaviour {
 
 	public float maxThrowForce = 1f;
 	public float maxVelocity = 10f;
+	public GameObject aimReticle;
+	public GameObject aimPointer;
+
 	Vector3 _orgMousePos;
 	Rigidbody2D _rigidBody;
 	ContactFilter2D _filter;
 	float _amountInside = 0f;
 	bool _canShoot = true;
 	bool _isLaunched = false;
+	bool _isAiming = false;
 	Collider2D[] _colliders = new Collider2D[5];
 
 	void Start () {
@@ -23,13 +27,28 @@ public class SwordThrowScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown("Fire1") && _canShoot) {
 	 		_orgMousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-	    } else if (Input.GetButtonUp("Fire1") && _canShoot) {
+	 		_isAiming = true;
+	 		aimReticle.SetActive(true);
+	 		aimPointer.SetActive(true);
+	 		aimReticle.transform.rotation = Quaternion.identity;
+
+	    } else if (Input.GetButtonUp("Fire1") && _isAiming) {	    	
 	    	_canShoot = false;
 	    	_isLaunched = true;
+	    	_isAiming = false;
 	 		Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	 		transform.position -= transform.up + transform.up * _amountInside;
 	 		_rigidBody.simulated = true;
 	 		_rigidBody.AddForce(delta*maxThrowForce, ForceMode2D.Impulse);
+
+	 		aimReticle.SetActive(false);
+	 		aimPointer.SetActive(false);
+	    }
+
+	    if(_isAiming){
+	    	Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
+         	aimPointer.transform.up = delta;
+         	aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*3f,1f);
 	    }
 	}
 
