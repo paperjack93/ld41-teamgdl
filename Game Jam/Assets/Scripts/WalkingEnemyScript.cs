@@ -20,10 +20,4 @@ public class WalkingEnemyScript : MonoBehaviour {
 		_rigidBody.AddForce(jump, ForceMode2D.Impulse);
 	}	
 
-	Vector2 GetGroundPoint(Vector2 point){
-		RaycastHit2D _raycastHit = Physics2D.Raycast(point+Vector2.up*100, Vector2.down, Mathf.Infinity, 1 << 10);
-		if(_raycastHit != null){
-			return _raycastHit.point;
-		} else return transform.position;
-	}
 }
