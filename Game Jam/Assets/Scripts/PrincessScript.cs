@@ -15,5 +15,5 @@ public class PrincessScript : MonoBehaviour {
     	Debug.Log("The princess is dead!");
     	_isDead = true;
     	transform.localScale = Vector3.Scale(transform.localScale,new Vector3(1,-1,1));
-    }
+    } 
 }
