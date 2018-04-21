@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
+    public static LevelManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
+  
 
-     void Awake()
+    void Awake()
     {
+
         //Check if instance already exists
         if (instance == null)
 
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
 
+        Debug.Log("GAME OVER")
+       
     }
 
     public void ExitGame()

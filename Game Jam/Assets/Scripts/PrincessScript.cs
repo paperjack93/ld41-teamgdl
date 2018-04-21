@@ -14,6 +14,7 @@ public class PrincessScript : MonoBehaviour {
     	if(_isDead) return;
     	Debug.Log("The princess is dead!");
     	_isDead = true;
-    	transform.localScale = Vector3.Scale(transform.localScale,new Vector3(1,-1,1));
+        GetComponent<LevelManager>().EndGame();
+        transform.localScale = Vector3.Scale(transform.localScale,new Vector3(1,-1,1));
     } 
 }
