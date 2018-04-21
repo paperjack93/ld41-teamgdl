@@ -14,6 +14,7 @@ public class EnemyScript : MonoBehaviour {
 
 	void Start () {
 		_rigidBody = GetComponent<Rigidbody2D>();
+		if(faceRight) transform.localScale = Vector3.Scale(transform.localScale,new Vector3(-1,1,1));
 		InvokeRepeating("DoStep", 1f, jumpTimer);
 	}
 	

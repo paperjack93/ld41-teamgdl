@@ -55,6 +55,7 @@ public class SwordThrowScript : MonoBehaviour {
 		foreach (Collider2D collider in _colliders){
 			if(collider == null) continue;
 		    if(collider.tag == "Enemy") OnHitEnemy(collider.GetComponent<EnemyScript>());
+		    else if(collider.tag == "Armor") OnHitArmor(collider.GetComponent<ArmorScript>());
 		    else if(collider.tag == "Ground") OnHitGround();
 		}
 	} 
@@ -63,6 +64,13 @@ public class SwordThrowScript : MonoBehaviour {
 		if(!_isLaunched) return;
 		enemy.OnHit();
 		Debug.Log("Hit enemy");
+	}
+
+	void OnHitArmor(ArmorScript armor){
+		if(!_isLaunched) return;
+		armor.OnHit(this);
+		_rigidBody.velocity *= -armor.bounceBack;
+		Debug.Log("Hit Armor");
 	}
 
 	void OnHitGround(){
