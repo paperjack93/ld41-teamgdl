@@ -12,6 +12,8 @@ public class SwordThrowScript : MonoBehaviour {
 	ContactFilter2D _filter;
 	float _amountInside = 0f;
 	bool _canShoot = true;
+	bool _isLaunched = false;
+	Collider2D[] _colliders = new Collider2D[5];
 
 	void Start () {
 		_rigidBody = GetComponent<Rigidbody2D>();
@@ -22,6 +24,8 @@ public class SwordThrowScript : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1") && _canShoot) {
 	 		_orgMousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	    } else if (Input.GetButtonUp("Fire1") && _canShoot) {
+	    	_canShoot = false;
+	    	_isLaunched = true;
 	 		Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	 		transform.position -= transform.up + transform.up * _amountInside;
 	 		_rigidBody.simulated = true;
@@ -30,26 +34,50 @@ public class SwordThrowScript : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		Collider2D[] colliders = new Collider2D[5];
-		int colliderCount = _rigidBody.OverlapCollider(_filter, colliders);
+		int colliderCount = _rigidBody.OverlapCollider(_filter, _colliders);
 		if(colliderCount < 1){
 	 		float angle = Vector2.SignedAngle(Vector2.up, _rigidBody.velocity);
 			_rigidBody.MoveRotation(angle);
 		} else {
-			if(_rigidBody.simulated){
-				_amountInside = _rigidBody.velocity.magnitude * 0.1f;
-				transform.position += transform.up * _amountInside;
-				_rigidBody.simulated = false;
-				_rigidBody.velocity = Vector2.zero;
-				_canShoot = true;
-			}
+			ProcessCollisions();
+			ClearColliders();
 		}
 
 		VelocityCheck();
 	}
 
 	void VelocityCheck(){
-		if(_rigidBody.velocity.magnitude < maxVelocity) return;
+		if(_rigidBody.velocity.magnitude < maxVelocity || !_rigidBody.simulated) return;
 		_rigidBody.velocity = _rigidBody.velocity.normalized * maxVelocity;
+	}
+
+	void ProcessCollisions(){
+		foreach (Collider2D collider in _colliders){
+			if(collider == null) continue;
+		    if(collider.tag == "Enemy") OnHitEnemy(collider);
+		    else if(collider.tag == "Ground") OnHitGround();
+		}
+	}
+
+	void OnHitEnemy(Collider2D enemy){
+		Debug.Log("Hit enemy");
+	}
+
+	void OnHitGround(){
+		if(!_isLaunched) return;
+		_amountInside = _rigidBody.velocity.magnitude * 0.1f;
+		transform.position += transform.up * _amountInside;
+		_rigidBody.simulated = false;
+		_rigidBody.velocity = Vector2.zero;
+		_canShoot = true;
+		_isLaunched = false;
+		Debug.Log("Hit ground");
+	}
+
+	void ClearColliders(){
+		 for ( int i = 0; i < _colliders.Length; i++)
+		 {
+		    _colliders[i] = null;
+		 }
 	}
 }
