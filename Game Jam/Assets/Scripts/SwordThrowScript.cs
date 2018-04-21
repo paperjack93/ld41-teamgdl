@@ -52,7 +52,7 @@ public class SwordThrowScript : MonoBehaviour {
 	    	Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	    	delta = Vector3.ClampMagnitude(delta, maxMagnitude);
          	aimPointer.transform.up = delta;
-         	aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*3f,1f);
+         	aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*6f,1f);
 	    }
 	}
 
