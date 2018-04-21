@@ -7,6 +7,7 @@ public class SwordThrowScript : MonoBehaviour {
 
 	public float maxThrowForce = 1f;
 	public float maxVelocity = 10f;
+	public float maxMagnitude = 0.75f;
 	public GameObject aimReticle;
 	public GameObject aimPointer;
 
@@ -37,6 +38,8 @@ public class SwordThrowScript : MonoBehaviour {
 	    	_isLaunched = true;
 	    	_isAiming = false;
 	 		Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
+	 		Debug.Log(delta.magnitude);
+	 		delta = Vector3.ClampMagnitude(delta, maxMagnitude);
 	 		transform.position -= transform.up + transform.up * _amountInside;
 	 		_rigidBody.simulated = true;
 	 		_rigidBody.AddForce(delta*maxThrowForce, ForceMode2D.Impulse);
@@ -47,6 +50,7 @@ public class SwordThrowScript : MonoBehaviour {
 
 	    if(_isAiming){
 	    	Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
+	    	delta = Vector3.ClampMagnitude(delta, maxMagnitude);
          	aimPointer.transform.up = delta;
          	aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*3f,1f);
 	    }
@@ -67,7 +71,7 @@ public class SwordThrowScript : MonoBehaviour {
 
 	void VelocityCheck(){
 		if(_rigidBody.velocity.magnitude < maxVelocity || !_rigidBody.simulated) return;
-		_rigidBody.velocity = _rigidBody.velocity.normalized * maxVelocity;
+		_rigidBody.velocity = Vector3.ClampMagnitude(_rigidBody.velocity, maxVelocity);
 	}
 
 	void ProcessCollisions(){
@@ -108,4 +112,6 @@ public class SwordThrowScript : MonoBehaviour {
 			_colliders[i] = null;
 		}
 	}
+
+
 }
