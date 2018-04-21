@@ -17,7 +17,7 @@ public class EnemyScript : MonoBehaviour {
 	public void OnHit(){
 
 		if(killFx != null) Instantiate(killFx, transform.position, Quaternion.identity); 
-		Camera.main.DOShakePosition(0.5f,0.5f);
+		Camera.main.DOShakePosition(0.25f,0.25f, 3);
 		Destroy(gameObject);
 	}
 
