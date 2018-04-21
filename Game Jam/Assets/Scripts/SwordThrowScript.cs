@@ -109,6 +109,7 @@ public class SwordThrowScript : MonoBehaviour {
 		if(!_isLaunched) return;
 		armor.OnHit(this);
 		_rigidBody.velocity *= -armor.bounceBack;
+
 		Debug.Log("Hit Armor");
 	}
 
