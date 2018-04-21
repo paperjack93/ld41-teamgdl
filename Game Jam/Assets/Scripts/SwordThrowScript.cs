@@ -31,6 +31,8 @@ public class SwordThrowScript : MonoBehaviour {
 	}
 
 	void Update () {
+		if(_isAiming) UpdateReticles();
+
 		if (Input.GetButtonDown("Fire1") && _canShoot) {
 			if(_isInGround && _groundCollider != null && !_isMovingOutOfGround) {
 				_isMovingOutOfGround = true;
@@ -40,20 +42,8 @@ public class SwordThrowScript : MonoBehaviour {
 					if(Input.GetButton("Fire1") && _canShoot) StartAiming();
 				});
 			} else StartAiming();
-	    } else if (Input.GetButtonUp("Fire1") && _isAiming) {	    	
-	    	_canShoot = false;
-	    	_isLaunched = true;
-	    	_isAiming = false;
-	 		Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
-	 		delta = Vector3.ClampMagnitude(delta, maxMagnitude);
-	 		_rigidBody.simulated = true;
-	 		_rigidBody.AddForce(delta*maxThrowForce, ForceMode2D.Impulse);
+	    } else if (Input.GetButtonUp("Fire1") && _isAiming) Shoot();
 
-	 		aimReticle.SetActive(false);
-	 		aimPointer.SetActive(false);
-	    }
-
-	    if(_isAiming) UpdateReticles();
 	}
 
 	void FixedUpdate(){
@@ -67,6 +57,21 @@ public class SwordThrowScript : MonoBehaviour {
 		}
 
 		VelocityCheck();
+	}
+
+	void Shoot(){
+		_canShoot = false;
+	    _isLaunched = true;
+	    _isAiming = false;
+	 	Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
+	 	delta = Vector3.ClampMagnitude(delta, maxMagnitude);
+	 	_rigidBody.simulated = true;
+	 	_rigidBody.AddForce(delta*maxThrowForce, ForceMode2D.Impulse);
+
+	 	Camera.main.DOShakePosition(delta.magnitude,delta.magnitude*2);
+
+	 	aimReticle.SetActive(false);
+	 	aimPointer.SetActive(false);
 	}
 
 	void StartAiming(){
@@ -83,6 +88,8 @@ public class SwordThrowScript : MonoBehaviour {
 	    delta = Vector3.ClampMagnitude(delta, maxMagnitude);
          aimPointer.transform.up = delta;
          aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*6f,1f);
+
+         Camera.main.DOShakePosition(0.05f,delta.magnitude/10);
 	}
 
 	void VelocityCheck(){
