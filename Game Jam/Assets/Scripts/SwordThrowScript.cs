@@ -54,12 +54,14 @@ public class SwordThrowScript : MonoBehaviour {
 	void ProcessCollisions(){
 		foreach (Collider2D collider in _colliders){
 			if(collider == null) continue;
-		    if(collider.tag == "Enemy") OnHitEnemy(collider);
+		    if(collider.tag == "Enemy") OnHitEnemy(collider.GetComponent<EnemyScript>());
 		    else if(collider.tag == "Ground") OnHitGround();
 		}
-	}
+	} 
 
-	void OnHitEnemy(Collider2D enemy){
+	void OnHitEnemy(EnemyScript enemy){
+		if(!_isLaunched) return;
+		enemy.OnHit();
 		Debug.Log("Hit enemy");
 	}
 
@@ -75,9 +77,8 @@ public class SwordThrowScript : MonoBehaviour {
 	}
 
 	void ClearColliders(){
-		 for ( int i = 0; i < _colliders.Length; i++)
-		 {
-		    _colliders[i] = null;
-		 }
+		for ( int i = 0; i < _colliders.Length; i++){
+			_colliders[i] = null;
+		}
 	}
 }
