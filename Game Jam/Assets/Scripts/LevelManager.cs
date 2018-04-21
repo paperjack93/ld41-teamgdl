@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
-  
+    
 
     void Awake()
     {
-
+      
         //Check if instance already exists
         if (instance == null)
 
@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
     public void EndGame()
     {
 
-        Debug.Log("GAME OVER")
+        Debug.Log("GAME OVER");
        
     }
 
