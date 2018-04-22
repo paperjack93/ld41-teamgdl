@@ -6,7 +6,7 @@ public class PrincessScript : MonoBehaviour {
 
     public GameObject blood;
 
-	bool _isDead = false;
+	public bool _isDead = false;
    
     void Start()
     {
