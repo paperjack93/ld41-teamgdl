@@ -159,6 +159,7 @@ public class SwordThrowScript : MonoBehaviour {
 		if(collider.tag == "Enemy") OnHitEnemy(collider.GetComponent<EnemyScript>());
 		else if(collider.tag == "Armor") OnHitArmor(collider, collider.GetComponent<ArmorScript>());
 		else if(collider.tag == "Ground") OnHitGround(collider);
+		else if(collider.tag == "Princess") OnHitPrincess(collider.GetComponent<PrincessScript>());
 	}
 
 	void OnHitEnemy(EnemyScript enemy){
@@ -193,6 +194,14 @@ public class SwordThrowScript : MonoBehaviour {
 		_isInGround = true;
 		_groundCollider = collider;
 		Debug.Log("Hit ground");
+	}
+
+	void OnHitPrincess(PrincessScript princess){
+		_rigidBody.simulated = false;
+		isEnabled = false;
+		_amountInside = Mathf.Min(1f, _rigidBody.velocity.magnitude * 0.1f);
+		transform.position += transform.up * _amountInside;
+		princess.KillPrincess("sword");
 	}
 
 	void ClearColliders(){

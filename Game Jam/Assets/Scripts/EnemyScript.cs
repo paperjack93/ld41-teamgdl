@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour {
 
 	public GameObject killFx;
 	public bool faceRight = false;
+
 	Rigidbody2D _rigidBody;
 
 
