@@ -8,10 +8,13 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
     public bool isInGame = false;
     public float enemyCheckTimer = 5f;
+    bool hasEnded = false;
+    public Animator anim;
 
     void Awake()
     {
-      
+        anim = GetComponent<Animator>();
+
         //Check if instance already exists
         if (instance == null)
 
@@ -54,9 +57,13 @@ public class LevelManager : MonoBehaviour
 
     public void EndGame()
     {
-
-        Debug.Log("GAME OVER");
-       
+        if (!hasEnded)
+        {
+           
+            hasEnded = true;
+            anim.SetBool("hasEnded", hasEnded);
+            Debug.Log("GAME OVER");
+        }
     }
 
     public void ExitGame()
