@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour {
 		Vector2 point = (Vector2)transform.position + (Vector2)transform.TransformDirection(Vector3.left) * (distance + Random.Range(-variation, variation));
 		Vector2 targetPoint = GetGroundPoint(point);
 
-		transform.DOJump(targetPoint, height, 1, duration).SetEase(Ease.Linear).OnComplete(()=>{
+		GetComponent<Rigidbody2D>().DOJump(targetPoint, height, 1, duration).SetEase(Ease.Linear).OnComplete(()=>{
 			Destroy(gameObject);
 		});
 	}
