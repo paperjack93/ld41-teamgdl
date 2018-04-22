@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
 
     public void CheckForEnemies(){
         if(!isInGame) return;
-        GameObject enemy = GameObject.FindWithTag("enemy");
+        GameObject enemy = GameObject.FindWithTag("Enemy");
         if(enemy != null) return;
 
         Debug.Log("LEVEL OVER");
