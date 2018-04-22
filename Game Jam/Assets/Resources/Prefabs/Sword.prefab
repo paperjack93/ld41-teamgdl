@@ -235,7 +235,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5000001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 5
@@ -401,7 +401,7 @@ MonoBehaviour:
   help: {fileID: 1651669893680792}
   shootSFX: {fileID: 8300000, guid: 9d66b39246e48be4ea6fd82b18436589, type: 3}
   chargeSFX: {fileID: 8300000, guid: 2140614194f877d4e95ef0fb693c2060, type: 3}
-  timeToShowHelp: 3
+  timeToShowHelp: 3.5
 --- !u!198 &198598115672735308
 ParticleSystem:
   m_ObjectHideFlags: 1

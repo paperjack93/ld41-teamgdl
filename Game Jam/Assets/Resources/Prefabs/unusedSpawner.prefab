@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4116054593717264}
   - component: {fileID: 114196032308167392}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: unusedSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1296127096251820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 3, z: 0}
+  m_LocalPosition: {x: 45, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,25 +53,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnItems:
   - spawnTime: 0
-    spawnObject: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
+    spawnObject: {fileID: 1543361199507488, guid: 2ded995c5f5324a41a64af87daca31de,
       type: 2}
-  - spawnTime: 2.5
-    spawnObject: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
-      type: 2}
-  - spawnTime: 4
+  - spawnTime: 0
     spawnObject: {fileID: 0}
-  - spawnTime: 10
-    spawnObject: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
-      type: 2}
-  - spawnTime: 4
+  - spawnTime: 0
     spawnObject: {fileID: 0}
-  - spawnTime: 10
+  - spawnTime: 0
     spawnObject: {fileID: 0}
-  - spawnTime: 12
+  - spawnTime: 0
     spawnObject: {fileID: 0}
-  - spawnTime: 13
+  - spawnTime: 0
     spawnObject: {fileID: 0}
-  - spawnTime: 14
+  - spawnTime: 0
     spawnObject: {fileID: 0}
-  - spawnTime: 15
+  - spawnTime: 0
+    spawnObject: {fileID: 0}
+  - spawnTime: 0
+    spawnObject: {fileID: 0}
+  - spawnTime: 0
     spawnObject: {fileID: 0}
