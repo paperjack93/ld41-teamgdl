@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
         {
            
             hasEnded = true;
-            anim.SetBool("hasEnded", hasEnded);
+            if(anim != null) anim.SetBool("hasEnded", hasEnded);
             Debug.Log("GAME OVER");
         }
     }

@@ -14,6 +14,7 @@ public class SwordThrowScript : MonoBehaviour {
 	public AudioClip shootSFX;
 	public AudioClip chargeSFX;
 	public float timeToShowHelp = 3f;
+	public bool isEnabled = true;
 
 	Vector3 _orgMousePos;
 	Rigidbody2D _rigidBody;
@@ -39,6 +40,7 @@ public class SwordThrowScript : MonoBehaviour {
 	}
 
 	void Update () {
+		if(!isEnabled) return;
 		if(_isAiming) UpdateReticles();
 
 		if (Input.GetButtonDown("Fire1") && _canShoot) {

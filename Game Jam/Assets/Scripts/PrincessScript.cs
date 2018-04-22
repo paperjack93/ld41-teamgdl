@@ -24,6 +24,9 @@ public class PrincessScript : MonoBehaviour {
             _blood.transform.rotation = collision.transform.rotation;
         }
 
+        GameObject sword = GameObject.FindWithTag("Sword");
+        if(sword) sword.GetComponent<SwordThrowScript>().isEnabled = false;
+
         if(LevelManager.instance != null) LevelManager.instance.EndGame();
     } 
 }
