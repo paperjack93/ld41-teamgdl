@@ -128,6 +128,7 @@ public class SwordThrowScript : MonoBehaviour {
         aimPointer.transform.up = delta;
         aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*6f,1f);
         _timeSinceLastClick = 0f;
+        Debug.Log(delta);
 
         //Camera.main.DOShakePosition(0.05f,delta.magnitude/10);
 	}
