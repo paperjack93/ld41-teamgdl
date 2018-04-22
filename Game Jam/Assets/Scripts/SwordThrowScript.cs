@@ -20,9 +20,9 @@ public class SwordThrowScript : MonoBehaviour {
 	Collider2D _collider;
 	ContactFilter2D _filter;
 	float _amountInside = 0f;
-	bool _isInGround = true;
-	bool _canShoot = true;
-	bool _isLaunched = false;
+	bool _isInGround = false;
+	bool _canShoot = false;
+	bool _isLaunched = true;
 	bool _isAiming = false;
 	bool _isMovingOutOfGround = false;
 	Collider2D[] _colliders = new Collider2D[4];
