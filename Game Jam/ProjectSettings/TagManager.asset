@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Armor
   - Princess
+  - Sword
   layers:
   - Default
   - TransparentFX

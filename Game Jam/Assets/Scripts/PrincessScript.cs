@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PrincessScript : MonoBehaviour {
 
+    public GameObject blood;
+
 	bool _isDead = false;
    
     void Start()
@@ -16,6 +18,11 @@ public class PrincessScript : MonoBehaviour {
     	Debug.Log("The princess is dead!");
     	_isDead = true;
         transform.localScale = Vector3.Scale(transform.localScale,new Vector3(1,-1,1));
+
+        if(collision.gameObject.tag == "Sword"){
+            GameObject _blood = Instantiate(blood, collision.contacts[0].point, Quaternion.identity); 
+            _blood.transform.rotation = collision.transform.rotation;
+        }
 
         if(LevelManager.instance != null) LevelManager.instance.EndGame();
     } 

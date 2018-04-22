@@ -79,6 +79,12 @@ public class SwordThrowScript : MonoBehaviour {
 
 	 	aimReticle.SetActive(false);
 	 	aimPointer.SetActive(false);
+
+		int colliderCount = _rigidBody.OverlapCollider(_filter, _colliders);
+		if(colliderCount > 1){
+			ProcessCollisions();
+			ClearColliders();
+		}
 	}
 
 	void StartAiming(){
