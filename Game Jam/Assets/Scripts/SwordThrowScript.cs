@@ -52,7 +52,7 @@ public class SwordThrowScript : MonoBehaviour {
 			} else StartAiming();
 
 			_timeSinceLastClick = 0f;
-			if(help.activeSelf) help.SetActive(false);
+			help.SetActive(false);
 	    } else if (Input.GetButtonUp("Fire1") && _isAiming) Shoot();
 
 	    if(!_isLaunched) return;
@@ -98,6 +98,7 @@ public class SwordThrowScript : MonoBehaviour {
 
 	 	aimReticle.SetActive(false);
 	 	aimPointer.SetActive(false);
+		help.SetActive(false);
 
 		int colliderCount = _rigidBody.OverlapCollider(_filter, _colliders);
 		if(colliderCount > 1){
@@ -122,10 +123,11 @@ public class SwordThrowScript : MonoBehaviour {
 		Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	    delta = Vector3.ClampMagnitude(delta, maxMagnitude);
 	    delta.y = Mathf.Max(0, delta.y);
-         aimPointer.transform.up = delta;
-         aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*6f,1f);
+        aimPointer.transform.up = delta;
+        aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*6f,1f);
+        _timeSinceLastClick = 0f;
 
-         Camera.main.DOShakePosition(0.05f,delta.magnitude/10);
+        //Camera.main.DOShakePosition(0.05f,delta.magnitude/10);
 	}
 
 	void VelocityCheck(){
@@ -134,7 +136,7 @@ public class SwordThrowScript : MonoBehaviour {
 	}
 
 	void HelpCheck(){
-		if(_isInGround) _timeSinceLastClick += Time.fixedDeltaTime;
+		if(_isInGround && !_isAiming) _timeSinceLastClick += Time.fixedDeltaTime;
 		if(_timeSinceLastClick < timeToShowHelp || help.activeSelf) return;
 		help.transform.rotation = Quaternion.identity;
 		help.SetActive(true);
