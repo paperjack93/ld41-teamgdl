@@ -25,7 +25,8 @@ public class SwordThrowScript : MonoBehaviour {
 	bool _isLaunched = false;
 	bool _isAiming = false;
 	bool _isMovingOutOfGround = false;
-	Collider2D[] _colliders = new Collider2D[5];
+	Collider2D[] _colliders = new Collider2D[4];
+	RaycastHit2D[] _raycastHits = new RaycastHit2D[1];
 	Collider2D _groundCollider;
 	AudioSource _audio;
 	float _timeSinceLastClick;
@@ -55,19 +56,27 @@ public class SwordThrowScript : MonoBehaviour {
 	    } else if (Input.GetButtonUp("Fire1") && _isAiming) Shoot();
 
 	    if(!_isLaunched) return;
-		int colliderCount = _rigidBody.OverlapCollider(_filter, _colliders);
-		if(colliderCount < 1){
 
-	 		float angle = Vector2.SignedAngle(Vector2.up, _rigidBody.velocity);
-			_rigidBody.MoveRotation(angle);
-		} else {
+		int colliderCount = _rigidBody.OverlapCollider(_filter, _colliders);
+		int rayCastCount = _collider.Cast((Vector2)_rigidBody.velocity.normalized, _raycastHits, _rigidBody.velocity.magnitude * Time.deltaTime);
+
+		if(rayCastCount>0){
+			foreach (RaycastHit2D hit in _raycastHits){
+				if(hit == null) continue;
+				_colliders[colliderCount] = hit.collider;
+				colliderCount++;
+			}
+		}
+		if(colliderCount > 0){
 			ProcessCollisions();
 			ClearColliders();
+		} else {
+			float angle = Vector2.SignedAngle(Vector2.up, _rigidBody.velocity);
+			_rigidBody.MoveRotation(angle);
 		}
 	}
 
 	void FixedUpdate(){
-
 		VelocityCheck();
 		HelpCheck();
 	}
@@ -106,6 +115,7 @@ public class SwordThrowScript : MonoBehaviour {
 		UpdateReticles();
 		aimReticle.SetActive(true);
 		aimPointer.SetActive(true);
+		help.SetActive(false);
 	}
 
 	void UpdateReticles(){
@@ -186,6 +196,4 @@ public class SwordThrowScript : MonoBehaviour {
 			_colliders[i] = null;
 		}
 	}
-
-
 }
