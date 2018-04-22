@@ -10,8 +10,10 @@ public class SwordThrowScript : MonoBehaviour {
 	public float maxMagnitude = 0.75f;
 	public GameObject aimReticle;
 	public GameObject aimPointer;
+	public GameObject help;
 	public AudioClip shootSFX;
 	public AudioClip chargeSFX;
+	public float timeToShowHelp = 3f;
 
 	Vector3 _orgMousePos;
 	Rigidbody2D _rigidBody;
@@ -26,6 +28,7 @@ public class SwordThrowScript : MonoBehaviour {
 	Collider2D[] _colliders = new Collider2D[5];
 	Collider2D _groundCollider;
 	AudioSource _audio;
+	float _timeSinceLastClick;
 
 	void Start () {
 		_rigidBody = GetComponent<Rigidbody2D>();
@@ -46,6 +49,9 @@ public class SwordThrowScript : MonoBehaviour {
 					if(Input.GetButton("Fire1") && _canShoot) StartAiming();
 				});
 			} else StartAiming();
+
+			_timeSinceLastClick = 0f;
+			if(help.activeSelf) help.SetActive(false);
 	    } else if (Input.GetButtonUp("Fire1") && _isAiming) Shoot();
 
 	}
@@ -61,6 +67,7 @@ public class SwordThrowScript : MonoBehaviour {
 		}
 
 		VelocityCheck();
+		HelpCheck();
 	}
 
 	void Shoot(){
@@ -72,6 +79,7 @@ public class SwordThrowScript : MonoBehaviour {
 	    _isAiming = false;
 	 	Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	 	delta = Vector3.ClampMagnitude(delta, maxMagnitude);
+	 	delta.y = Mathf.Max(0, delta.y);
 	 	_rigidBody.simulated = true;
 	 	_rigidBody.AddForce(delta*maxThrowForce, ForceMode2D.Impulse);
 
@@ -101,6 +109,7 @@ public class SwordThrowScript : MonoBehaviour {
 	void UpdateReticles(){
 		Vector3 delta = _orgMousePos - Camera.main.ScreenToViewportPoint(Input.mousePosition);
 	    delta = Vector3.ClampMagnitude(delta, maxMagnitude);
+	    delta.y = Mathf.Max(0, delta.y);
          aimPointer.transform.up = delta;
          aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*6f,1f);
 
@@ -112,14 +121,29 @@ public class SwordThrowScript : MonoBehaviour {
 		_rigidBody.velocity = Vector3.ClampMagnitude(_rigidBody.velocity, maxVelocity);
 	}
 
+	void HelpCheck(){
+		if(_isInGround) _timeSinceLastClick += Time.fixedDeltaTime;
+		if(_timeSinceLastClick < timeToShowHelp || help.activeSelf) return;
+		help.transform.rotation = Quaternion.identity;
+		help.SetActive(true);
+	}
+
+    void OnCollisionEnter2D(Collision2D collision) {
+    	ProcessCollider(collision.otherCollider);
+    } 
+
 	void ProcessCollisions(){
 		foreach (Collider2D collider in _colliders){
 			if(collider == null) continue;
-		    if(collider.tag == "Enemy") OnHitEnemy(collider.GetComponent<EnemyScript>());
-		    else if(collider.tag == "Armor") OnHitArmor(collider, collider.GetComponent<ArmorScript>());
-		    else if(collider.tag == "Ground") OnHitGround(collider);
+			ProcessCollider(collider);
 		}
-	} 
+	}
+
+	void ProcessCollider(Collider2D collider){
+		if(collider.tag == "Enemy") OnHitEnemy(collider.GetComponent<EnemyScript>());
+		else if(collider.tag == "Armor") OnHitArmor(collider, collider.GetComponent<ArmorScript>());
+		else if(collider.tag == "Ground") OnHitGround(collider);
+	}
 
 	void OnHitEnemy(EnemyScript enemy){
 		if(!_isLaunched) return;
