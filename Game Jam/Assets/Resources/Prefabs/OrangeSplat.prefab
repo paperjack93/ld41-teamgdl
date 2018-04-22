@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114601641619252906}
   - component: {fileID: 199227191294635732}
   m_Layer: 0
-  m_Name: SplatFx
+  m_Name: OrangeSplat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1496,10 +1496,10 @@ ParticleSystem:
     flipV: 0
     randomRow: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 289f7a19021b4634e8d91c8f74c8ddca, type: 3}
-    - sprite: {fileID: 21300002, guid: 289f7a19021b4634e8d91c8f74c8ddca, type: 3}
-    - sprite: {fileID: 21300004, guid: 289f7a19021b4634e8d91c8f74c8ddca, type: 3}
-    - sprite: {fileID: 21300006, guid: 289f7a19021b4634e8d91c8f74c8ddca, type: 3}
+    - sprite: {fileID: 21300000, guid: d3de1ea2c6c210d408d515570f1fa588, type: 3}
+    - sprite: {fileID: 21300002, guid: d3de1ea2c6c210d408d515570f1fa588, type: 3}
+    - sprite: {fileID: 21300004, guid: d3de1ea2c6c210d408d515570f1fa588, type: 3}
+    - sprite: {fileID: 21300006, guid: d3de1ea2c6c210d408d515570f1fa588, type: 3}
   VelocityModule:
     enabled: 0
     x:
@@ -4662,7 +4662,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: c686d6565b9ece94eb6b45068302b5d2, type: 2}
+  - {fileID: 2100000, guid: 97bee8dbf5a9092438f62b902247f5ba, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

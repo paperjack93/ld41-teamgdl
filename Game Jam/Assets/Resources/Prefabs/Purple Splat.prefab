@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114601641619252906}
   - component: {fileID: 199227191294635732}
   m_Layer: 0
-  m_Name: SplatFx
+  m_Name: Purple Splat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
