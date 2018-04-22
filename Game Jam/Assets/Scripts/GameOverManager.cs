@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
 
@@ -15,8 +15,13 @@ public class GameOverManager : MonoBehaviour
 
     void Update()
     {
-       if(princess._isDead)
+        if (princess._isDead) { 
             anim.SetBool("hasEnded",true);
         }
     }
+    public void RestartGame()
+    {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+    }
 
+}
