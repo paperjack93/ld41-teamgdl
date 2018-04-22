@@ -54,17 +54,19 @@ public class SwordThrowScript : MonoBehaviour {
 			if(help.activeSelf) help.SetActive(false);
 	    } else if (Input.GetButtonUp("Fire1") && _isAiming) Shoot();
 
-	}
-
-	void FixedUpdate(){
+	    if(!_isLaunched) return;
 		int colliderCount = _rigidBody.OverlapCollider(_filter, _colliders);
 		if(colliderCount < 1){
+
 	 		float angle = Vector2.SignedAngle(Vector2.up, _rigidBody.velocity);
 			_rigidBody.MoveRotation(angle);
 		} else {
 			ProcessCollisions();
 			ClearColliders();
 		}
+	}
+
+	void FixedUpdate(){
 
 		VelocityCheck();
 		HelpCheck();
@@ -157,18 +159,18 @@ public class SwordThrowScript : MonoBehaviour {
 
 		ContactPoint2D[] contacts = new ContactPoint2D[1];
 		if(_collider.GetContacts(contacts) < 1) return;
-
 		ContactPoint2D contact = contacts[0];
         Vector2 direction = Vector2.Reflect(_rigidBody.velocity.normalized, contact.normal);
-		
-		_rigidBody.velocity = direction * Mathf.Max(_rigidBody.velocity.magnitude, 15f); 
+				Debug.Log(_rigidBody.velocity.normalized +" " +	 contact.normal + " "+ direction);
+
+		_rigidBody.velocity = contact.normal * Mathf.Min(_rigidBody.velocity.magnitude, 15f); 
 
 		Debug.Log("Hit Armor");
 	}
 
 	void OnHitGround(Collider2D collider){
 		if(!_isLaunched) return;
-		_amountInside = _rigidBody.velocity.magnitude * 0.1f;
+		_amountInside = Mathf.Min(1f, _rigidBody.velocity.magnitude * 0.1f);
 		transform.position += transform.up * _amountInside;
 		_rigidBody.simulated = false;
 		_rigidBody.velocity = Vector2.zero;
