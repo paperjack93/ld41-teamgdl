@@ -51,34 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805f467ad62823a48a7b00abddad53fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnItems:
-  - spawnTime: 0
-    spawnObject: {fileID: 1512960740087028, guid: 1db5862d9deb97740b8384ef5e57911a,
-      type: 2}
-  - spawnTime: 1
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
-  - spawnTime: 2
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
-  - spawnTime: 3
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
-  - spawnTime: 4
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
-  - spawnTime: 10
-    spawnObject: {fileID: 1512960740087028, guid: 1db5862d9deb97740b8384ef5e57911a,
-      type: 2}
-  - spawnTime: 12
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
-  - spawnTime: 13
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
-  - spawnTime: 14
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
-  - spawnTime: 15
-    spawnObject: {fileID: 1974509520222950, guid: 1fb8be7321951ad4d8dbb86ef09a4bf1,
-      type: 2}
+  spawnItems: []
