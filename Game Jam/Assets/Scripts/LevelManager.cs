@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
-    
+    public bool isInGame = false;
+    public float enemyCheckTimer = 5f;
 
     void Awake()
     {
@@ -35,6 +36,20 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void CheckForEnemies(){
+        if(!isInGame) return;
+        GameObject enemy = GameObject.FindWithTag("enemy");
+        if(enemy != null) return;
+
+        Debug.Log("LEVEL OVER");
+    }
+
+    public void StartGame(){
+        NextLevel();
+        isInGame = true;
+        InvokeRepeating("CheckForEnemies", enemyCheckTimer, enemyCheckTimer);
     }
 
     public void EndGame()
