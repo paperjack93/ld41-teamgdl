@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public float enemyCheckTimer = 5f;
     bool hasEnded = false;
     public Animator anim;
+    public GameObject slideshow;
+    public int slideshowTime;
 
     void Awake()
     {
@@ -35,6 +37,10 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    public void PlayGame() {
+        slideshow.SetActive(true);
+        Invoke("NextLevel", slideshowTime);
+    }
 
     public void NextLevel()
     {
