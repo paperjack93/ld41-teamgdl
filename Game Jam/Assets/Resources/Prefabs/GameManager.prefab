@@ -39,9 +39,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f77d97d1623e2484fa06280a0103531f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -134,11 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0c9c5dd267b6243921d4ae0a4734db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInGame: 0
+  isInGame: 1
   enemyCheckTimer: 5
-  anim: {fileID: 0}
   slideshow: {fileID: 0}
   slideshowTime: 0
+  timeBeforeNextLevel: 5
+  MainMenuTheme: {fileID: 8300000, guid: f77d97d1623e2484fa06280a0103531f, type: 3}
+  GameTheme: {fileID: 8300000, guid: 8af0bfe537cab01488db8063885fd8ce, type: 3}
+  DeathTheme: {fileID: 8300000, guid: 2bbc961516f2afd4ab0973dc72466736, type: 3}
+  WinTheme: {fileID: 8300000, guid: 866134a81ff70c341a6b85c564624f87, type: 3}
+  enemyCount: 0
+  _timer: 5
 --- !u!224 &224396614716386464
 RectTransform:
   m_ObjectHideFlags: 1

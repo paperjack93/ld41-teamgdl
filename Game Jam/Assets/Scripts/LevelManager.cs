@@ -36,11 +36,16 @@ public class LevelManager : MonoBehaviour
         _audio = GetComponent<AudioSource>();
         _anim = GetComponent<Animator>();
         Screen.SetResolution(1280,768, false);
+
+        if(isInGame) {
+            _audio.clip = GameTheme;
+            _audio.Play();
+        }
     }
 
     void Update(){
         if(enemyCount < 1 && isInGame) _timer -= Time.deltaTime;
-        if(_timer < 0f) EndLevel();
+        if(_timer < 0f && isInGame) EndLevel();
     }
 
     public void PlayGame() {
@@ -52,6 +57,7 @@ public class LevelManager : MonoBehaviour
     public void EndLevel(){
         _audio.clip = WinTheme;
         _audio.Play();
+        isInGame = false;
 
         Invoke("NextLevel", 5f);
     }
@@ -61,6 +67,7 @@ public class LevelManager : MonoBehaviour
             _audio.clip = GameTheme;
             _audio.Play();
         }
+        isInGame = true;
         _timer = timeBeforeNextLevel;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -72,7 +79,13 @@ public class LevelManager : MonoBehaviour
 
     public void OnKilledEnemy(){
         enemyCount--;
-        if(enemyCount < 1) Invoke("NextLevel", 1f);
+    }
+
+    public void ReloadLevel(){
+        _audio.clip = GameTheme;
+        _audio.Play();
+        _timer = timeBeforeNextLevel;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void StartGame(){

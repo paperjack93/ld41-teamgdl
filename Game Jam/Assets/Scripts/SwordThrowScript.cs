@@ -128,8 +128,6 @@ public class SwordThrowScript : MonoBehaviour {
         aimPointer.transform.up = delta;
         aimPointer.transform.localScale = new Vector3(1f,1+delta.magnitude*6f,1f);
         _timeSinceLastClick = 0f;
-        Debug.Log(delta);
-
         //Camera.main.DOShakePosition(0.05f,delta.magnitude/10);
 	}
 
@@ -177,7 +175,6 @@ public class SwordThrowScript : MonoBehaviour {
 		if(_collider.GetContacts(contacts) < 1) return;
 		ContactPoint2D contact = contacts[0];
         Vector2 direction = Vector2.Reflect(_rigidBody.velocity.normalized, contact.normal);
-				Debug.Log(_rigidBody.velocity.normalized +" " +	 contact.normal + " "+ direction);
 
 		_rigidBody.velocity = contact.normal * Mathf.Min(_rigidBody.velocity.magnitude, 15f); 
 

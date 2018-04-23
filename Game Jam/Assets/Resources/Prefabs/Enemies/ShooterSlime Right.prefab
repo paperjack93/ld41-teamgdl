@@ -122,7 +122,7 @@ MonoBehaviour:
   jump: {x: 2, y: 3}
   jumpTimer: 1
   shootDistance: 15
-  projectile: {fileID: 1550985309847402, guid: 7cfb2b94e56e20b4bb9033bb323d0901, type: 2}
+  projectile: {fileID: 1367508475674366, guid: 0bcfec5a880d267459bf2d720d62c4b4, type: 2}
   shootTimer: 4
 --- !u!114 &114639063479548140
 MonoBehaviour:

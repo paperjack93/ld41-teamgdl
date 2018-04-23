@@ -19,11 +19,12 @@ public class GameOverManager : MonoBehaviour
     public void PrincessDeath(){
         anim.SetBool("hasEnded",true);
         GetComponent<AudioSource>().Play();
+        LevelManager.instance.GetComponent<AudioSource>().Stop();
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        LevelManager.instance.ReloadLevel();
     }
 
 }

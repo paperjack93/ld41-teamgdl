@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6adec35296acaa4580510a2d49aa1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killFx: {fileID: 1033162433597872, guid: 04f9304bafa72384b8b299868dca714c, type: 2}
+  killFx: {fileID: 1033162433597872, guid: ac35c77e546da1c438cf3a37afccd274, type: 2}
   faceRight: 1
 --- !u!114 &114644603731870874
 MonoBehaviour:
