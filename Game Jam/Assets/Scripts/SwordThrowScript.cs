@@ -139,6 +139,7 @@ public class SwordThrowScript : MonoBehaviour {
 	void HelpCheck(){
 		if(_isInGround && !_isAiming) _timeSinceLastClick += Time.fixedDeltaTime;
 		if(_timeSinceLastClick < timeToShowHelp || help.activeSelf) return;
+		if(!LevelManager.instance.isInGame) return;
 		help.transform.rotation = Quaternion.identity;
 		help.SetActive(true);
 	}
