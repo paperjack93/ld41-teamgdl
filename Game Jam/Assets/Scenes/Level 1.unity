@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1280,11 +1280,6 @@ MonoBehaviour:
   hitFx: {fileID: 0}
   hp: -1
   bounceBack: 1
---- !u!1 &456722131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
-    type: 2}
-  m_PrefabInternal: {fileID: 138978176}
 --- !u!1 &482149032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,11 +1365,11 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4116054593717264, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 24
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4116054593717264, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1424,36 +1419,38 @@ Prefab:
         type: 2}
       propertyPath: spawnItems.Array.data[2].spawnObject
       value: 
-      objectReference: {fileID: 456722131}
+      objectReference: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
+        type: 2}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[1].spawnTime
-      value: 2.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[2].spawnTime
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[3].spawnTime
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[3].spawnObject
       value: 
-      objectReference: {fileID: 456722131}
+      objectReference: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
+        type: 2}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[4].spawnTime
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[5].spawnTime
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
@@ -1474,6 +1471,23 @@ Prefab:
         type: 2}
       propertyPath: spawnItems.Array.data[9].spawnTime
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
+        type: 2}
+      propertyPath: spawnItems.Array.data[4].spawnObject
+      value: 
+      objectReference: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
+        type: 2}
+    - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
+        type: 2}
+      propertyPath: spawnItems.Array.data[5].spawnObject
+      value: 
+      objectReference: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
+        type: 2}
+    - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
+        type: 2}
+      propertyPath: spawnItems.Array.data[0].spawnTime
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
@@ -2002,15 +2016,15 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.size
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4116054593717264, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 24
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 4116054593717264, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 19
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 4116054593717264, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2043,7 +2057,7 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[3].spawnTime
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
@@ -2054,7 +2068,7 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[4].spawnTime
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
@@ -2143,7 +2157,7 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[2].spawnTime
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1296127096251820, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
       propertyPath: m_IsActive
@@ -3937,7 +3951,7 @@ Prefab:
     - target: {fileID: 114198463854878202, guid: 2ded995c5f5324a41a64af87daca31de,
         type: 2}
       propertyPath: diveDistance
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114198463854878202, guid: 2ded995c5f5324a41a64af87daca31de,
         type: 2}
