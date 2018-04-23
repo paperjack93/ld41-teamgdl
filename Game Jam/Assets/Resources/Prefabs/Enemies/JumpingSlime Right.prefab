@@ -120,7 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killFx: {fileID: 1033162433597872, guid: db22dc1a01afeb341b3bbef928a814df, type: 2}
-  faceRight: 0
+  faceRight: 1
+  maxRandomSize: 1.2
 --- !u!114 &114954033025151934
 MonoBehaviour:
   m_ObjectHideFlags: 1
