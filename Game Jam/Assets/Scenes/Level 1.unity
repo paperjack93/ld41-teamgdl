@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -558,11 +558,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4598944515340470, guid: 37579bfe0c29fd84b8a70538cdae2b70, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.34
+      value: -6.21
       objectReference: {fileID: 0}
     - target: {fileID: 4598944515340470, guid: 37579bfe0c29fd84b8a70538cdae2b70, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.1
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 4598944515340470, guid: 37579bfe0c29fd84b8a70538cdae2b70, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1575,7 +1575,7 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[1].spawnTime
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
@@ -1596,7 +1596,7 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[4].spawnTime
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
@@ -1638,7 +1638,7 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[0].spawnTime
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1296127096251820, guid: d00679256bd1a954b82c746e45aadb71, type: 2}
       propertyPath: m_Name
@@ -1917,8 +1917,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1740200285
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7c45cb231c2c0f6478337fa554026edc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3479,12 +3479,12 @@ Prefab:
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[0].spawnTime
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
       propertyPath: spawnItems.Array.data[1].spawnTime
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
@@ -4321,7 +4321,7 @@ Transform:
   m_PrefabInternal: {fileID: 244173698}
   m_GameObject: {fileID: 1984189583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.34, y: 4.1, z: 0}
+  m_LocalPosition: {x: -6.21, y: 4.02, z: 0}
   m_LocalScale: {x: 5.5, y: 5.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
