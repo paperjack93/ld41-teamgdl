@@ -70,6 +70,11 @@ public class LevelManager : MonoBehaviour
         isInGame = true;
         _timer = timeBeforeNextLevel;
 
+        if(SceneManager.GetActiveScene().buildIndex == 0) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            return;
+        }
+        
         GameObject princess = GameObject.FindWithTag("Princess");
         if(princess.GetComponent<PrincessScript>().isDead) ReloadLevel();
         else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
