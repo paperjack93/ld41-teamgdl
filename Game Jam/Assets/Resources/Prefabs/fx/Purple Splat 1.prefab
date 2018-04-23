@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 199227191294635732}
   - component: {fileID: 82893663289540280}
   m_Layer: 0
-  m_Name: Purple Splat
+  m_Name: Purple Splat 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
