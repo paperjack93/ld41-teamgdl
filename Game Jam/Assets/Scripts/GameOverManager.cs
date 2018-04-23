@@ -19,6 +19,7 @@ public class GameOverManager : MonoBehaviour
     public void PrincessDeath(){
         anim.SetBool("hasEnded",true);
         GetComponent<AudioSource>().Play();
+        LevelManager.instance. isInGame = false;
         LevelManager.instance.GetComponent<AudioSource>().Stop();
     }
 

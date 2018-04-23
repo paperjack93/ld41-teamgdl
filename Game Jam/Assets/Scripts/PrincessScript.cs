@@ -31,6 +31,9 @@ public class PrincessScript : MonoBehaviour {
         if(source == "sword"){
             GameObject _blood = Instantiate(blood, sword.transform.position+sword.transform.up, Quaternion.identity); 
             _blood.transform.rotation = sword.transform.rotation;
+            GetComponent<Animator>().SetTrigger("SwordDeath");
+        } else {
+            GetComponent<Animator>().SetTrigger("BlobDeath");
         }
 
 

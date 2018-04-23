@@ -93,6 +93,7 @@ public class LevelManager : MonoBehaviour
         _audio.clip = GameTheme;
         _audio.Play();
         _timer = timeBeforeNextLevel;
+        isInGame = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

@@ -19,6 +19,6 @@ public class SpawnerScript : MonoBehaviour {
 	
 	IEnumerator SpawnEnemy(SpawnData data){
 		 yield return new WaitForSeconds(data.spawnTime);
-		 Instantiate(data.spawnObject, transform.position, Quaternion.identity);
+		 if(LevelManager.instance.isInGame) Instantiate(data.spawnObject, transform.position, Quaternion.identity);
 	}
 }
