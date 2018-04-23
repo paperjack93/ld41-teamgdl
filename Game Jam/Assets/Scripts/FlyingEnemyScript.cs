@@ -39,7 +39,4 @@ public class FlyingEnemyScript : MonoBehaviour {
 		_isDiving = true;
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
-        GetComponent<EnemyScript>().OnHit();
-    }
 }

@@ -8,6 +8,8 @@ public class EnemyScript : MonoBehaviour {
 	public GameObject killFx;
 	public bool faceRight = false;
 
+	bool _isDead = false;
+
 	Rigidbody2D _rigidBody;
 
 
@@ -18,6 +20,8 @@ public class EnemyScript : MonoBehaviour {
 	}
 	
 	public void OnHit(){
+		if(_isDead) return;
+		_isDead = true;
 
 		if(killFx != null) Instantiate(killFx, transform.position, Quaternion.identity); 
 		Camera.main.DOShakePosition(0.25f,0.25f, 3);
@@ -28,5 +32,9 @@ public class EnemyScript : MonoBehaviour {
 	void CheckPos(){
 		if(transform.position.magnitude>60f) Destroy(gameObject);
 	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.tag == "sword") OnHit();
+    }
 
 }
