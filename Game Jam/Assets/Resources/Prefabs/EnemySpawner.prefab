@@ -53,16 +53,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnItems:
   - spawnTime: 0
-    spawnObject: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
-      type: 2}
+    spawnObject: {fileID: 0}
   - spawnTime: 2.5
-    spawnObject: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
-      type: 2}
+    spawnObject: {fileID: 0}
   - spawnTime: 4
     spawnObject: {fileID: 0}
   - spawnTime: 10
-    spawnObject: {fileID: 1755205369802330, guid: e8b4a92b7d0b0574ca6b7aec991f4b8e,
-      type: 2}
+    spawnObject: {fileID: 0}
   - spawnTime: 4
     spawnObject: {fileID: 0}
   - spawnTime: 10

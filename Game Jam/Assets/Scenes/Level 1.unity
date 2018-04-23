@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1049,7 +1049,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 6.8055224, y: 0.29747936}
+    newSize: {x: 6.809493, y: 0.34589484}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -1097,7 +1097,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 6.8055224, y: 0.29747936}
+  m_Size: {x: 6.809493, y: 0.34589484}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1110,7 +1110,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 439363583}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071066, w: -0.70710707}
-  m_LocalPosition: {x: -20.75, y: 34.54, z: 0}
+  m_LocalPosition: {x: -20.919, y: 34.524, z: 0}
   m_LocalScale: {x: 8.114114, y: 6.987405, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1584,7 +1584,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 6.8055224, y: 0.29747936}
+    newSize: {x: 6.8055224, y: 0.3181993}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -1632,7 +1632,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 6.8055224, y: 0.29747936}
+  m_Size: {x: 6.8055224, y: 0.3181993}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1645,7 +1645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901575510}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.0000015646217}
-  m_LocalPosition: {x: 0.98, y: 23.079998, z: 0}
+  m_LocalPosition: {x: 0.98, y: 23.152, z: 0}
   m_LocalScale: {x: 8.114114, y: 6.987405, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2049,7 +2049,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 6.8055224, y: 0.29747936}
+    newSize: {x: 6.797257, y: 0.33970872}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -2097,7 +2097,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 6.8055224, y: 0.29747936}
+  m_Size: {x: 6.797257, y: 0.33970872}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2110,7 +2110,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019928930}
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
-  m_LocalPosition: {x: 20.78, y: 34.45, z: 0}
+  m_LocalPosition: {x: 20.928, y: 34.484, z: 0}
   m_LocalScale: {x: 8.114114, y: 6.987405, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2960,7 +2960,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Use the sword and
 
-    protect the princess!'
+    protect Princess Sadie!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3027,12 +3027,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -353.0177, w: 0}
   m_textInfo:
     textComponent: {fileID: 1834358726}
-    characterCount: 39
+    characterCount: 41
     spriteCount: 0
     spaceCount: 6
     wordCount: 7
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
