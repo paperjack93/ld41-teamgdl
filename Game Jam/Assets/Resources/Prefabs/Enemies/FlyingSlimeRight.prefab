@@ -134,8 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 10
   moveHeight: 1
-  moveDuration: 10
-  diveDistance: 10
+  moveDuration: 7
+  diveDistance: 7
   diveTime: 3
   moveTimer: 3
   diveHeight: 10
