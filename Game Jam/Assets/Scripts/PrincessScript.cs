@@ -6,7 +6,7 @@ public class PrincessScript : MonoBehaviour {
 
     public GameObject blood;
 
-	public bool _isDead = false;
+	public bool isDead = false;
    
     void Start()
     {
@@ -19,9 +19,9 @@ public class PrincessScript : MonoBehaviour {
     }
 
     public void KillPrincess(string source){
-        if(_isDead) return;
+        if(isDead) return;
         Debug.Log("The princess is dead!");
-        _isDead = true;
+        isDead = true;
 
         GameObject sword = GameObject.FindWithTag("Sword");
         if(sword) sword.GetComponent<SwordThrowScript>().isEnabled = false;

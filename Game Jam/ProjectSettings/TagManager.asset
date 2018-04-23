@@ -10,6 +10,7 @@ TagManager:
   - Armor
   - Princess
   - Sword
+  - TheEnd
   layers:
   - Default
   - TransparentFX

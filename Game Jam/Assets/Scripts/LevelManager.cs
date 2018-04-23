@@ -59,7 +59,8 @@ public class LevelManager : MonoBehaviour
         _audio.Play();
         isInGame = false;
 
-        Invoke("NextLevel", 5f);
+        if(SceneManager.GetActiveScene().buildIndex+1 < SceneManager.sceneCount) Invoke("NextLevel", 2.5f);
+        else PlayEndScene();
     }
 
     public void NextLevel() {
@@ -69,7 +70,10 @@ public class LevelManager : MonoBehaviour
         }
         isInGame = true;
         _timer = timeBeforeNextLevel;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        GameObject princess = GameObject.FindWithTag("Princess");
+        if(princess.GetComponent<PrincessScript>().isDead) ReloadLevel();
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void OnSpawnedEnemy(){
@@ -100,6 +104,11 @@ public class LevelManager : MonoBehaviour
             _hasEnded = true;
             if(_anim != null) _anim.SetBool("hasEnded", _hasEnded);
         }
+    }
+
+    public void PlayEndScene(){
+        GameObject endAnim = GameObject.FindWithTag("TheEnd");
+        endAnim.GetComponent<Animator>().SetBool("hasEnded", true);
     }
 
     public void ExitGame()
