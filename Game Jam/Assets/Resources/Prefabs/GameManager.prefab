@@ -139,7 +139,7 @@ MonoBehaviour:
   slideshow: {fileID: 0}
   slideshowTime: 0
   timeBeforeNextLevel: 5
-  MainMenuTheme: {fileID: 8300000, guid: f77d97d1623e2484fa06280a0103531f, type: 3}
+  MainMenuTheme: {fileID: 8300000, guid: a5361dd02625586419d71b729657691b, type: 3}
   GameTheme: {fileID: 8300000, guid: 8af0bfe537cab01488db8063885fd8ce, type: 3}
   DeathTheme: {fileID: 8300000, guid: 2bbc961516f2afd4ab0973dc72466736, type: 3}
   WinTheme: {fileID: 8300000, guid: 866134a81ff70c341a6b85c564624f87, type: 3}
