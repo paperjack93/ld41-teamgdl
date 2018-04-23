@@ -25,6 +25,8 @@ public class PrincessScript : MonoBehaviour {
         GameObject sword = GameObject.FindWithTag("Sword");
         if(sword) sword.GetComponent<SwordThrowScript>().isEnabled = false;
 
+        GameOverManager.instance.PrincessDeath();
+
         if(source == "sword"){
             GameObject _blood = Instantiate(blood, sword.transform.position+sword.transform.up, Quaternion.identity); 
             _blood.transform.rotation = sword.transform.rotation;
