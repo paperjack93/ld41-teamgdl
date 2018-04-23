@@ -40,7 +40,8 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.tag == "sword") OnHit();
+        if(collision.gameObject.tag == "Sword") OnHit();
+        else if(collision.gameObject.tag == "Princess") OnHit();
     }
 
 }
