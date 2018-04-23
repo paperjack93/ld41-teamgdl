@@ -26,6 +26,7 @@ public class EnemyScript : MonoBehaviour {
 	}
 	
 	public void OnHit(){
+		if(!LevelManager.instance.isInGame) return;
 		if(_isDead) return;
 		_isDead = true;
 
