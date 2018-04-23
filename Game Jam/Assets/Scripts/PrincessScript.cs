@@ -14,7 +14,8 @@ public class PrincessScript : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        KillPrincess("enemy");
+        if(collision.gameObject.tag == "sword") KillPrincess("sword");
+        else KillPrincess("enemy");
     }
 
     public void KillPrincess(string source){

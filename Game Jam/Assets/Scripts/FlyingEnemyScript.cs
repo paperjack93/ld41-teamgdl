@@ -38,4 +38,8 @@ public class FlyingEnemyScript : MonoBehaviour {
 		_rigidBody.DOJump(_target.position, diveHeight, 0, diveTime);
 		_isDiving = true;
 	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+        GetComponent<EnemyScript>().OnHit();
+    }
 }

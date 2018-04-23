@@ -174,7 +174,7 @@ public class SwordThrowScript : MonoBehaviour {
 		ContactPoint2D[] contacts = new ContactPoint2D[1];
 		if(_collider.GetContacts(contacts) < 1) return;
 		ContactPoint2D contact = contacts[0];
-        Vector2 direction = Vector2.Reflect(_rigidBody.velocity.normalized, contact.normal);
+        //Vector2 direction = Vector2.Reflect(_rigidBody.velocity.normalized, contact.normal);
 
 		_rigidBody.velocity = contact.normal * Mathf.Min(_rigidBody.velocity.magnitude, 15f); 
 
