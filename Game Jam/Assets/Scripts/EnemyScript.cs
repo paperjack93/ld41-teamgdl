@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour {
 
 	public GameObject killFx;
 	public bool faceRight = false;
+	public float maxRandomSize = 1.2f;
 
 	bool _isDead = false;
 
@@ -14,9 +15,14 @@ public class EnemyScript : MonoBehaviour {
 
 
 	void Start () {
-		if(faceRight) transform.localScale = Vector3.Scale(transform.localScale,new Vector3(-1,1,1));
+		if(faceRight) transform.localScale = Vector3.Scale(transform.localScale,new Vector3(-1f,1f,1f));
+		 transform.localScale = new Vector3(
+		 	transform.localScale.x * Random.Range(1f,maxRandomSize),
+		 	transform.localScale.y * Random.Range(1f,maxRandomSize),
+		 	transform.localScale.z * Random.Range(1f,maxRandomSize));
 		InvokeRepeating("CheckPos", 1f, 1f);
 		LevelManager.instance.OnSpawnedEnemy();
+
 	}
 	
 	public void OnHit(){
