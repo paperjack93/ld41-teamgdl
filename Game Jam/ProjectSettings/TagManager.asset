@@ -50,6 +50,9 @@ TagManager:
   - name: BackgroundObj
     uniqueID: 3741633093
     locked: 0
+  - name: BackgroundObjFront
+    uniqueID: 2925060241
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
