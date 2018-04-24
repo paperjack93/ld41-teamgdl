@@ -3487,7 +3487,7 @@ Prefab:
         type: 2}
       propertyPath: spawnItems.Array.data[3].spawnObject
       value: 
-      objectReference: {fileID: 1001658374827100, guid: 53ea02093ba5d2a4ab98efcf7d082d81,
+      objectReference: {fileID: 1184085867964372, guid: a7254cd87290a0d45a10bf6ca7557e48,
         type: 2}
     - target: {fileID: 114196032308167392, guid: d00679256bd1a954b82c746e45aadb71,
         type: 2}
