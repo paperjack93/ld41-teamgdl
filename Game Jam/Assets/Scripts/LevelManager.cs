@@ -68,13 +68,14 @@ public class LevelManager : MonoBehaviour
             _audio.Play();
         }
         isInGame = true;
+        enemyCount = 0;
         _timer = timeBeforeNextLevel;
 
         if(SceneManager.GetActiveScene().buildIndex == 0) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             return;
         }
-        
+
         GameObject princess = GameObject.FindWithTag("Princess");
         if(princess.GetComponent<PrincessScript>().isDead) ReloadLevel();
         else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -95,6 +96,8 @@ public class LevelManager : MonoBehaviour
         _timer = timeBeforeNextLevel;
         isInGame = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        enemyCount = 0;
+        _timer = timeBeforeNextLevel;
     }
 
     public void StartGame(){
