@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114958167161542196}
   - component: {fileID: 95049440785444336}
   m_Layer: 9
-  m_Name: TankSlime 1
+  m_Name: TankSlime Right
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killFx: {fileID: 1033162433597872, guid: 04f9304bafa72384b8b299868dca714c, type: 2}
   faceRight: 1
+  maxRandomSize: 1.2
 --- !u!114 &114330977589647208
 MonoBehaviour:
   m_ObjectHideFlags: 1

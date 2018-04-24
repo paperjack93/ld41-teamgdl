@@ -26,18 +26,18 @@ public class EnemyScript : MonoBehaviour {
 	}
 	
 	public void OnHit(){
-		if(!LevelManager.instance.isInGame) return;
 		if(_isDead) return;
 		_isDead = true;
+		LevelManager.instance.OnKilledEnemy();
+		if(!LevelManager.instance.isInGame) return;
 
 		if(killFx != null) Instantiate(killFx, transform.position, Quaternion.identity); 
 		Camera.main.DOShakePosition(0.25f,0.25f, 3);
-		LevelManager.instance.OnKilledEnemy();
 		Destroy(gameObject);
 	}
 
 	void CheckPos(){
-		if(transform.position.magnitude>60f) Destroy(gameObject);
+		if(transform.position.magnitude>60f) OnHit();
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
