@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
         _audio.clip = WinTheme;
         _audio.Play();
         isInGame = false;
-        if(SceneManager.GetActiveScene().buildIndex+1 < SceneManager.sceneCountInBuildSettings-1) Invoke("NextLevel", 4f);
+        if(SceneManager.GetActiveScene().buildIndex+1 < SceneManager.sceneCountInBuildSettings) Invoke("NextLevel", 4f);
         else PlayEndScene();
     }
 
